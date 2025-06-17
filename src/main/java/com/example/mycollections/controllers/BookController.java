@@ -25,7 +25,7 @@ public class BookController {
     public String getBooksHtml() {
         String bookList = "<ul>";
         for (Book book : books) {
-            bookList += "<li>" + book.getName() + "</li>";
+            bookList += "<li>" + book.getName() + " was published in " + book.getYear() + " by " + book.getAuthor() + ", and it has " + book.getPages() + " pages." + "</li>";
         }
         bookList += "</ul>";
 

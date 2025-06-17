@@ -1,5 +1,6 @@
 package com.example.mycollections.controllers;
 
+import com.example.mycollections.models.Album;
 import com.example.mycollections.models.Movie;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +26,11 @@ public class MovieController {
 
     @GetMapping("/html")
     public String getMoviesHtml() {
-        StringBuilder movieList = new StringBuilder("<ul>");
+        String movieList = "<ul>";
         for (Movie movie : movies) {
-            movieList.append("<li>").append(movie.getName()).append("</li>");
+            movieList += "<li>" + movie.getName() + " was released in " + movie.getYear() + ", was directed by " + movie.getDirector() + ", and has a runtime of " + movie.getRuntime() + " minutes." + "</li>";
         }
-        movieList.append("</ul>");
+        movieList += "</ul>";
 
         return """
                 <html>

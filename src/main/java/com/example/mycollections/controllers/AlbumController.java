@@ -26,7 +26,7 @@ public class AlbumController {
     public String getAlbumsHtml() {
         String albumList = "<ul>";
         for (Album album : albums) {
-            albumList += "<li>" + album.getName() + "</li>";
+            albumList += "<li>" + album.getName() + " was released in " + album.getYear() + " by " + album.getArtist() + ", and it has " + album.getTracks() + " tracks." + "</li>";
         }
         albumList += "</ul>";
 
